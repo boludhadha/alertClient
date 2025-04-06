@@ -22,4 +22,4 @@ COPY --from=build /app/dist ./dist
 # Railway will provide the PORT env variable
 EXPOSE ${PORT}
 
-CMD ["serve", "-s", "dist", "-l", "0.0.0.0:$PORT"]
+CMD sh -c "serve -s dist -l $PORT"
