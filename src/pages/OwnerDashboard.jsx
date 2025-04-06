@@ -10,7 +10,7 @@ const OwnerDashboard = () => {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/owner/dashboard?token=${token}`);
+        const response = await fetch(`alertflask-production.up.railway.app/api/owner/dashboard?token=${token}`);
         const data = await response.json();
         if(response.ok) {
           setDashboardData(data);

@@ -30,7 +30,7 @@ const SubscriberSignup = () => {
       return;
     }
     try {
-      const response = await fetch('http://localhost:5000/api/subscriber/register', {
+      const response = await fetch('alertflask-production.up.railway.app/api/subscriber/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

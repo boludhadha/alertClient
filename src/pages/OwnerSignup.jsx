@@ -27,7 +27,7 @@ const OwnerSignup = () => {
       return;
     }
     try {
-      const response = await fetch('http://localhost:5000/api/owner/register', {
+      const response = await fetch('alertflask-production.up.railway.app/api/owner/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
