@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
+
 
 const SubscriberSignup = () => {
   const [searchParams] = useSearchParams();
@@ -30,7 +32,7 @@ const SubscriberSignup = () => {
       return;
     }
     try {
-      const response = await fetch('alertflask-production.up.railway.app/api/subscriber/register', {
+      const response = await fetch(`${API_BASE_URL}/api/subscriber/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

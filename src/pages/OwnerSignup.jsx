@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
+
 
 const OwnerSignup = () => {
   const navigate = useNavigate();
@@ -27,7 +29,7 @@ const OwnerSignup = () => {
       return;
     }
     try {
-      const response = await fetch('alertflask-production.up.railway.app/api/owner/register', {
+      const response = await fetch(`${API_BASE_URL}/api/owner/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

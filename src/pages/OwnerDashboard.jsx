@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
+
 
 const OwnerDashboard = () => {
   const [searchParams] = useSearchParams();
@@ -10,7 +12,7 @@ const OwnerDashboard = () => {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const response = await fetch(`alertflask-production.up.railway.app/api/owner/dashboard?token=${token}`);
+        const response = await fetch(`${API_BASE_URL}/api/owner/dashboard?token=${token}`);
         const data = await response.json();
         if(response.ok) {
           setDashboardData(data);
